@@ -148,3 +148,10 @@ section {
     padding: 0 40px; /*0 pra cima e pra baixo e 40px p/ os lados*/
   }
 }
+
+@media (max-width: 390px) {
+  .nav ul a {
+    padding: 7px;
+    margin-bottom: 100px;
+  }
+}
