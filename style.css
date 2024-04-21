@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;300&family=Roboto&display=swap');
+
+:root {
+  --purple: #5280E2;
+  --green: #15CDCB;
+  --bg-dark: #212226;
+  --light-grey: #EBDEDE
+
+  --menu-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg-dark);
+}
+
+body, button, input, select, textarea {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  color: var(--light-grey);
+}
+
+button {
+  background: var(--purple);
+  border: 0;
+  border-radius: 16px;
+  padding: 8px 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+header {
+  height: calc(100vh - 70px); /*100vh da altura menos 65px do nav*/
+  display: flex; /*Classe pai*/
+  align-items: center; /*div centralizada*/
+}
+
+header .container {
+  padding: 0 100px; /*0 pra cima e 100px p/ lados*/
+  width: 50%; /*Vai ocupar só metade da tela*/
+  height: fit-content; /*Na prática, isso significa que a caixa usará o espaço disponível, mas nunca mais do que max-content*/
+}
+
+header .container img {
+  display: none; /*Na versão Desktop a logo não vai aparecer*/
+  margin-bottom: 70px; /*margem de 70px pra baixo*/
+}
+
+header .container h1 {
+  color: var(--green);
+}
+
+header .container button {
+  margin-top: 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px; /*0 para cima e baixo e 100px p/ lados*/
+  background: var(--bg-dark);
+  height: 70px;
+  position: sticky; /*Determina como ficará a localização final do objeto, permitindo seu deslocamento, como será apresentado adiante ex: top, left, right*/
+  top: 0;
+}
+
+img {
+  height: 40px; /*Altura da logo*/
+}
+
+/*Deixando o menu responsivo*/
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; /*Ocupa 100% do espaço disponível*/
+}
+
+nav ul a {
+  font-size: 18px;
+  color: var(--green);
+  text-decoration: none;
+  /*margin: 0 35px; 0 pra cima e baixo e 35px entre eles*/
+}
+
+section {
+  height: 1500px;
+  background: purple;
+}
+
+/*RESPONSIVIDADE*/
+
+/*Desktop*/
+@media (max-width: 1000px) {
+  header .container {
+    width: 100%; /*Pega 100% da tela no modo p/ Desktop, deixando responsivo*/
+  }
+  
+  nav ul a {
+    font-size: 18px;
+  }
+
+  nav {
+    padding: 0 30px; /*0 pra cima e p/ baixo e 30px para os lados*/
+  }
+}
+
+/*Tablet*/
+@media (max-width: 767px) {
+ 
+  header .container img {
+    display: inline; /*Na versão tablet e celular a logo irá aparecer*/
+  }
+
+  /*Para tablet e celular a logo não será mostrada*/
+  nav img {
+    display: none; /*Tirando a logo para o menu ñ ficar apertado*/
+  }
+
+  nav ul {
+    padding: 0; /*Zerando o padding*/
+  }
+
+  nav ul a {
+    font-size: 16px; /*O menu que antes era 24px quando chegar em 481px vai ficar com fonte 16px*/
+  }
+}
+
+/*Celular*/
+@media (max-width: 480px) {
+  header .container {
+    padding: 0 40px; /*0 pra cima e pra baixo e 40px p/ os lados*/
+  }
+}
